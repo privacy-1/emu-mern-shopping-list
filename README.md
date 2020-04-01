@@ -13,23 +13,33 @@ This is an emulated customer service using P1 harporates
 Add your MONGO_URI to the default.json file. Make sure you set an env var for that and the jwtSecret on deployment
 
 create .env file in the root folder ,and add these :
-
+```
 MONGO_URI = <>
+
 JWT_SECRET = <>
+
 PORT = <>
 
 KEYCHAIN_HOST = <>
+
 KEYCHAIN_PORT = <>
+
 KEYCHAIN_SERVICE_CRYPTO_KEY = <>
+
 KEYCHAIN_CACHE_EXPIRE = <>
 
 LDAR_HOST = <>
+
 LDAR_PORT = <>
 
 CERBERUS_HOST = <>
+
 CERBERUS_PORT = <>
+
 CERBERUS_SERVICE_ACCOUNT_USERNAME = <>
+
 CERBERUS_SERVICE_ACCOUNT_PWD  = <>
+```
 
 ### run 
 
