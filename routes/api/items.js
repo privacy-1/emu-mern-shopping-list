@@ -3,6 +3,8 @@ import auth from '../../middleware/auth';
 // Item Model
 import Item from '../../models/Item';
 
+import keychain from '../../harpocrates/keychain';
+
 const router = Router();
 
 /**
@@ -29,6 +31,7 @@ router.get('/', async (req, res) => {
  */
 
 router.post('/', auth, async (req, res) => {
+
   const newItem = new Item({
     name: req.body.name
   });

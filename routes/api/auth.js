@@ -6,6 +6,8 @@ import auth from '../../middleware/auth';
 // User Model
 import User from '../../models/User';
 
+import keychain from '../../harpocrates/keychain';
+
 const { JWT_SECRET } = config;
 const router = Router();
 
@@ -83,6 +85,15 @@ router.post('/register', async (req, res) => {
     const token = jwt.sign({ id: savedUser._id }, JWT_SECRET, {
       expiresIn: 3600
     });
+
+    // p1-harpocrates-code
+    await keychain.createUser(savedUser.id)
+    .then( data => {
+      console.log("user created",savedUser.id);
+      return true;
+    }).catch(err=>{
+      console.log("user create err");
+    })
 
     res.status(200).json({
       token,
